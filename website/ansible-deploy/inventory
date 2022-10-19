@@ -1,0 +1,2 @@
+[kslave1]
+172.31.31.158 ansible_user=root
