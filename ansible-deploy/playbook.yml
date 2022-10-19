@@ -4,7 +4,7 @@
   tasks:
     - name: deploy PHP app docker container
       docker_container:
-        image: 'phanminhlam/php-app:{{ tag }}'
+        image: 'phuongnl95/php-app:{{ tag }}'
         name: php-app
         state: started
         ports:
