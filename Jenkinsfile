@@ -4,12 +4,12 @@ pipeline{
 	
     agent any
     stages{
-        stage('Checkout...'){	    
-            steps{
-		        echo 'cloning..'
-                git 'https://github.com/phuongnl15395/edureka-cert-project-statement-I.git'
-            }
-        }
+//         stage('Checkout...'){	    
+//             steps{
+// 		        echo 'cloning..'
+//                 git 'https://github.com/phuongnl15395/edureka-cert-project-statement-I.git'
+//             }
+//         }
         stage('Build......'){	    
             steps{
 		        sh 'docker build -t phuongnl95/php-app:$BUILD_NUMBER .'
