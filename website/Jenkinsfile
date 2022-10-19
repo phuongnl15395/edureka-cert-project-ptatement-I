@@ -7,20 +7,20 @@ pipeline{
         stage('Checkout...'){	    
             steps{
 		        echo 'cloning..'
-                git 'https://github.com/lam-phanminh/End-Project-1.git'
+                git 'https://github.com/phuongnl15395/edureka-cert-project-statement-I.git'
             }
         }
         stage('Build......'){	    
             steps{
-		        sh 'docker build -t phanminhlam/php-app:$BUILD_NUMBER .'
+		        sh 'docker build -t phuongnl95/php-app:$BUILD_NUMBER .'
             }
         }
         stage('Docker login && push image ......'){	    
             steps{
 		            
-                withCredentials([usernamePassword(credentialsId: 'docker-hub', passwordVariable: 'passwd', usernameVariable: 'user')]) {
+                withCredentials([usernamePassword(credentialsId: 'dockerhub', passwordVariable: 'passwd', usernameVariable: 'user')]) {
        
-                sh 'echo "${passwd} | docker login -u ${user} --password-stdin" && docker push phanminhlam/php-app:$BUILD_NUMBER'
+                sh 'echo "${passwd} | docker login -u ${user} --password-stdin" && docker push phuongnl95/php-app:$BUILD_NUMBER'
                     
                 }
             }
